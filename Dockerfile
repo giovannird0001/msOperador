@@ -7,5 +7,5 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 FROM openjdk:17-jdk-slim
 COPY --from=build /home/app/target/msOperador-0.0.1-SNAPSHOT.jar /usr/local/lib/msOperador.jar
-EXPOSE 8761
+EXPOSE 7000
 ENTRYPOINT ["java", "-jar", "/usr/local/lib/msOperador.jar"]
